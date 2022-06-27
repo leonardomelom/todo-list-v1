@@ -16,14 +16,19 @@ export function TaskList() {
   const [ id, setNewID] = useState(0)
 
   function handleCreateNewTask() {
+   if(newTaskTitle !== ''){
    const newID = Math.floor(Math.random() * 10000) + 1
    setNewID(newID)
+   
    const newTask = {
     id: id,
     title: newTaskTitle,
     isComplete: false
    }
       setTasks([...tasks, newTask])
+  }else{
+    alert('erro')
+  }
   }
 
 
